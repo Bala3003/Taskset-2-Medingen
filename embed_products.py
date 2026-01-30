@@ -3,7 +3,7 @@ import json
 import mysql.connector
 from sklearn.feature_extraction.text import TfidfVectorizer
 
-df = pd.read_csv("sampledata/sampledata.csv")
+df = pd.read_csv("products.csv")
 
 vectorizer = TfidfVectorizer()
 vectors = vectorizer.fit_transform(df["product_name"]).toarray()
@@ -32,3 +32,4 @@ cursor.close()
 con.close()
 
 print("records inserted")
+
