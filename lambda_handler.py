@@ -24,8 +24,7 @@ def lambda_handler(event, context):
     for r in rows:
         product_names.append(r[1])
         product_vectors.append(json.loads(r[2]))
-
-    # Refit vectorizer on product names
+        
     vectorizer = TfidfVectorizer()
     vectorizer.fit(product_names)
 
@@ -46,3 +45,4 @@ def lambda_handler(event, context):
         "statusCode": 200,
         "body": results
     }
+
